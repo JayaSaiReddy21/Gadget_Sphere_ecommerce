@@ -1,0 +1,76 @@
+
+<nav class="navbar navbar-expand-lg">
+  
+    <ul class="navbar-nav">
+      <div class="formgroup"    >
+        <input class="form-control" type="text" placeholder="Search here" name="product" [(ngModel)]="productName" />
+      </div>
+     <a class="nav-link btn-success"  (click)="searchProduct()"><i class="fa fa-search" style="color: aliceblue;"></i></a>
+     <!-- <div><button (click)="searchProduct()" class="btn btn-warning"><i class="fas fa-search" style='font: size 30px '></i></button></div> -->
+    </ul>
+</nav>
+
+<table>
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <button (click)="add()" class="btn btn-success btn-add">Add Product</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Product Price</th>
+              <th>Product Colour</th>
+              <th>Product Warranty</th>
+              <th>Product Description1</th>
+              <th>Product Description2</th>
+              <th>Product Description3</th>
+              <th>Product Description4</th>
+              <th>Product Quantity</th>
+              <th>Image 1</th>
+              <th>Image 2</th>
+              <th>Image 3</th>
+              <th>Image 4</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products  | paginate:{ itemsPerPage: count, currentPage: p }">
+              <td>{{ product.productName }}</td>
+              <td>&#x20b9;{{ product.productPrice }}/-</td>
+              <td>{{ product.productColour }}</td>
+              <td>{{ product.productWarranty }}</td>
+              <td>{{ product.productDescription1 }}</td>
+              <td>{{ product.productDescription2 }}</td>
+              <td>{{ product.productDescription3 }}</td>
+              <td>{{ product.productDescription4 }}</td>
+              <td>{{ product.productQuantity }}</td>
+              <td><img src="{{ product.link }}" alt="img"></td>
+              <td><img src="{{ product.link1 }}" alt="img"></td>
+              <td><img src="{{ product.link2}}" alt="img"></td>
+              <td><img src="{{ product.link3 }}" alt="img"></td>
+              <td>
+                <button (click)="updateprod(product.productId)" class="btn btn-success"><i class="fas fa-edit"></i></button>
+              </td>
+              <td>
+                <button (click)="deleteprod(product.productId)" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  </div>
+ </table>
+
+ 
+ <div class="text-right">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

@@ -1,0 +1,53 @@
+
+ <mat-toolbar color="primary" class="mat-elevation-z8">
+  <button (click)="drawer.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+  </button>
+  <span>Admin Panel</span>
+  <span class="spacer"></span>
+  <span>Welcome, Admin</span>
+  <button mat-button (click)="logout()">Logout</button>
+ 
+   <!-- <mat-icon matBadgeColor="accent" matBadge="15" [matBadgeHidden]="badgevisible" matBadgeSize="small">notifications</mat-icon> -->
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side" position="start">
+  <mat-nav-list>
+      <mat-list-item>
+          <button (click)="productListClicked()" mat-button><mat-icon>dashboard</mat-icon> Products List</button>
+      </mat-list-item>
+      <mat-list-item>
+          <button (click)="accountListClicked()" mat-button><mat-icon>group</mat-icon> Accounts List</button>
+      </mat-list-item>
+      <mat-list-item>
+          <button (click)="soldProductClicked()" mat-button><mat-icon>assignment</mat-icon> Sold Products</button>
+      </mat-list-item>
+      <mat-list-item>
+          <button (click)="helpClicked()" mat-button><mat-icon>help</mat-icon> Help</button>
+      </mat-list-item>
+      
+ </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+      <div style="text-align: center;min-height: 600px;">
+         
+          <!-- <H1 style="font-family: 'Courier New', Courier, monospace; 
+          font-size: 30px;
+           text-align: center;
+           padding-top: 30px;">Hello Admin</H1> -->
+           <div *ngIf="isProductListClicked"><app-productlist></app-productlist></div>
+           <div *ngIf="isAccountListClicked"><app-userslist></app-userslist></div>
+           <div *ngIf="isSoldListClicked"><app-soldproducts></app-soldproducts></div>
+           <div *ngIf="isHelpClicked"><app-adminhelp></app-adminhelp></div>
+           
+        
+      </div>
+    
+  </mat-drawer-content>
+
+</mat-drawer-container>
+
+  
+  

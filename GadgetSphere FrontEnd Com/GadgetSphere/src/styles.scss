@@ -1,0 +1,29 @@
+// // Import Angular Material theming module
+
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+// // Define custom palette colors
+// $custom-primary: mat-palette($mat-indigo);
+// $custom-accent: mat-palette($mat-pink, A200, A100, A400);
+// $custom-warn: mat-palette($mat-red);
+
+// // Create custom theme using defined colors
+// $custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warn);
+
+// // Include core Angular Material styles
+// @include mat-core();
+
+// // Apply custom theme
+// @include angular-material-theme($custom-theme);
+
+// // Define custom typography if needed
+// $custom-typography: mat-typography-config(
+//   $font-family: 'Roboto, sans-serif',
+//   $headline: mat-typography-level(24px, 48px, 400),
+//   $body-1: mat-typography-level(16px, 24px, 400),
+//   $body-2: mat-typography-level(14px, 24px, 500),
+// );
+
+// // Include custom typography if needed
+// @include angular-material-typography($custom-typography);

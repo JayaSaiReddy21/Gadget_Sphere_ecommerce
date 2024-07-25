@@ -1,0 +1,29 @@
+<!--Navbar-->
+<app-indexnavbar [userFName]="userName"></app-indexnavbar>
+
+<body >
+    <div class="container" >
+        <div class="row">
+          <ng-container *ngFor="let product of prodList">
+            <div class="item col-md-3">
+              <div class="card">
+                <img class="card-img-top" (click)="viewprod(product.productId)" src="{{product.link}}" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{product.productName}}</h5>
+                  <p class="card-text" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">Price: &#x20b9;{{product.productPrice}}/-</p>
+                
+                  <button mat-flat-button color="primary" (click)="viewprod(product.productId)">View Product</button>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    
+
+
+      <!--Footer-->
+   
+    <app-indexfooter></app-indexfooter>
+  </body>
+ 

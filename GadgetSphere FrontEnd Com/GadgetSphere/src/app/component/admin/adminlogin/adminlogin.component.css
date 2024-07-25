@@ -1,0 +1,17 @@
+html, body {
+    height: 85%;
+  }
+  
+  .container {
+    background-color: darkgrey;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card {
+    margin-top: 50px; /* Adjust as needed */
+    margin-bottom: 50px; /* Adjust as needed */
+  }
+  

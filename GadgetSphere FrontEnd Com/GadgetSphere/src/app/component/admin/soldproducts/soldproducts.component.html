@@ -1,0 +1,58 @@
+
+<div>
+    <div class="row">
+ </div>
+<table class="table table-hover table-bordered" >
+         <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Order Id </th>
+                <th>User Id</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Full Name</th>
+                <th>Order Quantity</th>
+                <th>Phone Number</th>
+                <th>Country</th>
+                <th>Flat</th>
+                <th>State</th>
+                <th>Pincode</th>
+                <th>Order Status</th>
+                <th>Payment Method</th>
+                <th>Landmark</th>
+               
+            </tr>
+         </thead>
+          <tbody>
+            <tr *ngFor="let order of orderData | paginate:{ itemsPerPage: count, currentPage: p }">
+                <td>{{order.productId}}</td>
+                <td>{{order.orderId}}</td>
+                <td>{{order.userId}}</td>
+                <td>{{order.productName}}</td>
+                <td>{{order.productPrice}}</td>
+                <td>{{order.fullName}}</td>
+                <td>{{order.orderQuantity}} </td>
+                <td>{{order.phoneNumber}}</td>
+                <td>{{order.country}}</td>
+                <td>{{order.flat}}</td>
+                <td>{{order.state}}</td>
+                <td>{{order.pincode}}</td>
+                <td>{{order.orderStatus}}</td>
+                <td>{{order.paymentMethod}}</td>
+                <td>{{order.landmark}}</td>
+                
+                
+                <!-- <td>&#x20b9;{{product.totalAmount}}/-</td> -->
+               
+            </tr>
+         </tbody>
+     </table>
+ 
+</div>
+
+
+<div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+

@@ -1,0 +1,91 @@
+<app-indexnavbar></app-indexnavbar>
+
+  <mat-card style="padding-top: 90px; padding-bottom: 20px; padding-left: 60px; padding-right: 60px;">
+<mat-stepper #stepper style="padding-top: 90px; border: 1px solid #ccc;  
+padding-left: 20px; padding-right: 20px; padding-bottom: 20px;">
+  <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+    <form [formGroup]="firstFormGroup" >
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <mat-label>Full Name</mat-label>
+        <input matInput placeholder="Enter Full Name" formControlName="fullNameCtrl" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+          <mat-label>Phone Number</mat-label>
+          <input matInput placeholder="Enter Your Phone No" formControlName="phoneNumberCtrl" required>
+        </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      <mat-form-field>
+        <mat-label>Country/Region</mat-label>
+        <!--<input matInput placeholder="Enter Country/Region" formControlName="countryCtrl" required>-->
+        <mat-select formControlName="countryCtrl" (selectionChange)="onCountryChange($event)">
+          <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Pincode</mat-label>
+        <input matInput placeholder="Enter Pincode" formControlName="pincodeCtrl" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Flat,House,Building,Company,Apartment</mat-label>
+        <input matInput placeholder="Enter Flat,House,Building,Company,Apartment" formControlName="flatCtrl" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Landmark</mat-label>
+        <input matInput placeholder="Enter Landmark" formControlName="landmarkCtrl" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>State</mat-label>
+        <!--<input matInput placeholder="Enter State" formControlName="stateCtrl" required>-->
+        <mat-select formControlName="stateCtrl">
+          <mat-option *ngFor="let state of states[selectedCountry]" [value]="state">{{ state }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="thirdFormGroup" errorMessage="Payment is required.">
+    <form [formGroup]="thirdFormGroup" (ngSubmit)="onSubmit(orderData)">
+      <mat-form-field appearance="fill">
+        <mat-label>Select Your Payment Method</mat-label>
+        <mat-select [(value)]="selectedOption" formControlName="selectPaymentCtrl" (selectionChange)="onPaymentMethodChange($event)">
+          <mat-option value="Cash On Delivery">Cash On Delivery</mat-option>
+          <mat-option value="Card Payment" (click)="openCardPaymentDialog()">Card Payment</mat-option>
+          <!-- <mat-option value="UPI">UPI</mat-option> -->
+          <!-- <mat-option value="card"><button type="button" data-toggle="modal" data-target="#exampleModal">Card</button></mat-option> -->
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button type="submit">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>
+</mat-card>
+
+
+
+
+
+<div>
+<app-indexfooter></app-indexfooter>
+</div>

@@ -1,0 +1,36 @@
+<app-indexnavbar class="navbar"></app-indexnavbar>
+<div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Product Name</th>
+          <th>Brand</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ca of cartList">
+          <td><img src="{{ca.imageLink}}" alt="Product Image" class="img-thumbnail" style="max-width: 100px;"></td>
+          <td>{{ca.productName}}</td>
+          <td>{{ca.productBrand}}</td>
+          <td>&#x20b9;{{ca.productPrice}}/-</td>
+          <td>
+            <input readonly type="number" name="product" class="form-control" [disabled]="ca.productQuantity > 0 ? false : true" [(ngModel)]="ca.selectedQuantity" (input)="onchangeqty(ca.productId,$event)" min="1" [max]="ca.productQuantity">
+            <span class="text-danger" *ngIf="ca.productQuantity === 0">(Out of Stock)</span>
+
+
+          </td>
+          <!-- <td><button type="button" class="btn btn-danger" (click)="buyNow(productInfo.productId,cart.quantity)">Buy Now</button></td> -->
+          <td><button type="button" class="btn btn-danger" (click)="deletecart(ca.cartId)">Remove</button></td>
+          
+        </tr>
+        <label class="align" style="font-size: 200%;"><b>TOTAL AMOUNT:</b>&#x20b9;{{gettotalprice()}}/-</label>
+        <pre><button type="button" (click)="Buy(gettotalprice())" [disabled]="gettotalprice()>0?false:true" [hidden]="hidebuy?true:false" class="btn btn-warning" >BUY</button></pre>
+      </tbody>
+      </table>
+     
+</div>
+      <app-indexfooter class="footer"></app-indexfooter>

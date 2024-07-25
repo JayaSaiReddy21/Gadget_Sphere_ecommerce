@@ -1,0 +1,50 @@
+.item {
+    margin-bottom: 20px;
+    margin-top: 80px;
+
+
+  }
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    height: 100%;
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  .card-body {
+    padding: 20px;
+    height: 150px; /* Adjust the height as needed */
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .card-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  body {
+    background-color:lavender; 
+    
+  }

@@ -1,0 +1,92 @@
+
+    <div class="bgi">
+        <div class="container py-5">
+          <div class="row justify-content-center">
+            <div class="col-md-5 border p-4 mt-3 border-radius bg-light">
+              <form (ngSubmit)="!productsForm.invalid && addproduct()" #productsForm="ngForm">
+                <div class="text-danger font-weight-bold mb-3" *ngIf="productsForm.dirty"></div>
+      
+                <fieldset class="form-group">
+                  <label>Product Name</label>
+                  <input type="text" class="form-control" #productName="ngModel" [(ngModel)]="products.productName" name="productName" required /><!--two way data binding-->
+                  <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && productName.invalid">Please Enter Product Name</div>
+                </fieldset>
+      
+                <fieldset class="form-group">
+                  <label>Product Price</label>
+                  <input type="text" class="form-control" #productPrice="ngModel" [(ngModel)]="products.productPrice" name="productPrice" required />
+                  <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && productPrice.invalid">Please Enter Product Price</div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Product Colour</label>
+                    <input type="text" class="form-control" #productColour="ngModel" [(ngModel)]="products.productColour" name="productColour" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && productColour.invalid">Please Enter Product Colour</div>
+                  </fieldset>
+        
+                  <fieldset class="form-group">
+                    <label>Product Warranty</label>
+                    <input type="text" class="form-control" #productWarranty="ngModel" [(ngModel)]="products.productWarranty" name="productWarranty" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && productWarranty.invalid">Please Enter Product Warranty</div>
+                  </fieldset>
+                        
+                  <fieldset class="form-group">
+                    <label>Product Description1</label>
+                    <input type="text" class="form-control" #productDescription1="ngModel" [(ngModel)]="products.productDescription1" name="productDescription1" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && productDescription1.invalid">Please Enter Product Description1</div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <label>Product Description2</label>
+                    <input type="text" class="form-control" #productDescription2="ngModel" [(ngModel)]="products.productDescription2" name="productDescription2" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && productDescription2.invalid">Please Enter Product Description2</div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <label>Product Description3</label>
+                    <input type="text" class="form-control" #productDescription3="ngModel" [(ngModel)]="products.productDescription3" name="productDescription3" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && productDescription3.invalid">Please Enter Product Description3</div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <label>Product Description4</label>
+                    <input type="text" class="form-control" #productDescription4="ngModel" [(ngModel)]="products.productDescription4" name="productDescription4" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && productDescription4.invalid">Please Enter Product Description4</div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <label>Product Quantity</label>
+                    <input type="number" class="form-control" #productQuantity="ngModel" [(ngModel)]="products.productQuantity" name="productQuantity" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && productQuantity.invalid">Please Enter Product Quantity</div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <label>Image Link</label>
+                    <input type="text" class="form-control" #link="ngModel" [(ngModel)]="products.link" name="link" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && link.invalid">Please Enter Valid Link</div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <label>Image Link</label>
+                    <input type="text" class="form-control" #link="ngModel" [(ngModel)]="products.link1" name="link1" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && link.invalid">Please Enter Valid Link</div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <label>Image Link</label>
+                    <input type="text" class="form-control" #link="ngModel" [(ngModel)]="products.link2" name="link2" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && link.invalid">Please Enter Valid Link</div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <label>Image Link</label>
+                    <input type="text" class="form-control" #link="ngModel" [(ngModel)]="products.link3" name="link3" required />
+                    <div class="text-danger font-weight-bold" *ngIf="productsForm.dirty && link.invalid">Please Enter Valid Link</div>
+                  </fieldset>
+
+                <button type="submit" class="btn btn-success">Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>

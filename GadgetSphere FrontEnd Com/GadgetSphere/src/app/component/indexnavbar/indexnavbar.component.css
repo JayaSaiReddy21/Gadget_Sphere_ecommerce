@@ -1,0 +1,39 @@
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 10px 0; 
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.navbar-content {
+    max-width: 1200px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    padding: 0 20px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Example styling for navbar links */
+.navbar-content a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+/* Example styling for logo */
+.navbar-content .navbar-brand {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold; /* Make the font bold */
+    font-size: 1.5rem;
+}
+

@@ -1,0 +1,95 @@
+
+  <app-indexnavbar></app-indexnavbar>
+
+  <div style="padding-top: 90px; padding-bottom: 120px;" >
+  <div class="container">
+    <h2>Choose Payment Method</h2>
+    <form (ngSubmit)="selectPaymentMethod()" #paymentMethodForm="ngForm">
+      <div class="mb-3">
+        <label for="paymentMethod" class="form-label">Select Payment Method:</label>
+        <select id="paymentMethod" name="paymentMethod" class="form-select" [(ngModel)]="selectedPaymentMethod" required>
+          <option value="" disabled>Select a payment method</option>
+          <option> 
+          </option>
+          <option value="creditCard">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="bankTransfer">Bank Transfer</option>
+          <option value="CashOnDelivery">CashOnDelivery</option>
+        </select>
+        <br>
+        <!-- <div class="Gpay">
+            <google-pay-button environment="TEST" [buttonColor]="buttonColor" [buttonType]="buttonType"
+              [buttonSizeMode]="isCustomSize ? 'fill' : 'static'" [paymentRequest]="paymentRequest" [style.width.px]="buttonWidth"
+              [style.height.px]="buttonHeight" (loadpaymentdata)="onLoadPaymentData($event)"></google-pay-button>
+        </div> -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Credit Card
+        </button>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="paymentMethodForm.invalid">Continue</button>
+    </form>
+  </div>
+  </div>
+
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Credit Card Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  
+                  <form [formGroup]="creditCardForm" (ngSubmit)="submitForm()">
+                    
+                    <div class="form-group">
+                      <label for="cardNumber">Card Number</label><label style="color: red;">*</label>
+                      <input type="number" class="form-control" placeholder="Enter the Card Number" #cardNumber="ngModel"  [(ngModel)]="cardNumber"  (input)="cardNumberValid($event)" name="cardNumber" required="required" maxlength="16"/>
+                      <span class="text-danger font-weight-bold" *ngIf="!cardNumber">Please Enter Valid Card Number</span> <br> 
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="cardHolderName">Card Holder Name</label><label style="color: red;">*</label>
+                      <input type="text" class="form-control" placeholder="Enter the card holder name" #cardHolderName="ngModel"  [(ngModel)]="cardHolderName"  (input)="cardHolderNameValid($event)" name="cardHolderName" required/>
+                      <span class="text-danger font-weight-bold" *ngIf="!cardHolderName">Please Enter Card Holder Name</span> <br> 
+                    </div>
+
+                    <div class="form-group">
+                      <label for="expiryDate">Expiry Date</label><label style="color: red;">*</label>
+                      <input type="text" class="form-control" placeholder="Enter the expiry date (MM/YY)" #expiryDate="ngModel"  [(ngModel)]="expiryDate"  (input)="expiryDateValid($event)" name="expiryDate" required/>
+                      <span class="text-danger font-weight-bold" *ngIf="!expiryDate">Please Enter Expiry Date (MM/YY)</span> <br> 
+                    </div>
+
+                    <div class="form-group">
+                      <label for="cvv">CVV</label><label style="color: red;">*</label>
+                      <input type="text" class="form-control" placeholder="Enter the CVV" #cvv="ngModel"  [(ngModel)]="cvv"  (input)="cvvValid($event)" name="cvv" required/>
+                      <span class="text-danger font-weight-bold" *ngIf="!cvv">Please Enter CVV</span> <br> 
+                    </div>
+
+                    
+                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+  
+        </div>
+      
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="submit" class="btn btn-primary mt-4">Submit</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-indexfooter></app-indexfooter>
+  
+  

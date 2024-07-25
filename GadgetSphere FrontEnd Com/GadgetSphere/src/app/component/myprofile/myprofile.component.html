@@ -1,0 +1,77 @@
+
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-5 border p-4 mt-3 ">
+<form (ngSubmit)="!profileForm.invalid "  #profileForm="ngForm">
+<fieldset class="form-group">
+        
+ <label>First Name</label>
+ <input readonly type="text" class="form-control" #firstName="ngModel" [(ngModel)]="user.firstName" name="firstName" required minlength="2" maxlength="25"/>
+ <span class="text-danger font-weight-bold" *ngIf="profileForm.dirty && firstName.invalid">Please Enter Valid First Name</span>
+ </fieldset>
+
+
+ <fieldset class="form-group">
+ <label >Last Name</label>
+ <input  type="text" class="form-control" #lastName="ngModel" [(ngModel)]="user.lastName" name="lastName" required="required" maxlength="10"/>
+ <span class="text-danger font-weight-bold" *ngIf="profileForm.dirty && lastName.invalid">Please Enter Valid LastName</span> 
+</fieldset>
+
+ <fieldset class="form-group">
+ <label>Email Id</label>
+ <input  type="email" class="form-control" #email="ngModel" [(ngModel)]="user.emailId" name="email" required="required" maxlength="25"/>
+ <span class="text-danger font-weight-bold" *ngIf="profileForm.dirty && email.invalid">Please Enter Valid EmailId</span> 
+</fieldset>
+
+<fieldset class="form-group">
+    <label>Phone Number</label>
+    <input type="number" class="form-control" #phoneNumber="ngModel" [(ngModel)]="user.mobileNo" name="phoneNumber" required="required" maxlength="25"/>
+    <span class="text-danger font-weight-bold" *ngIf="profileForm.dirty && phoneNumber.invalid">Please Enter Valid Phone Number</span> 
+   </fieldset>
+
+<!-- <fieldset class="form-group">
+    <label>Mobile Number</label>
+    <input type="number" class="form-control" #number="ngModel" placeholder="**********" (input)="mobileValid($event)" [(ngModel)]="profileDetails.phoneNumber" name="number" required="required" minlength="10" maxlength="10"/>
+    <span class="text-danger font-weight-bold" *ngIf="!isMobileValid">Please Enter Valid PhoneNumber</span> 
+   </fieldset> -->
+
+   <fieldset class="form-group">
+    <label>Country</label>
+    <input type="text"   class="form-control" #country="ngModel" [(ngModel)]="order.country" name="country" required="required" maxlength="25"/>
+    <span class="text-danger font-weight-bold" *ngIf="profileForm.dirty && country.invalid">Please Enter Valid Country Number</span> 
+   </fieldset>
+
+   <fieldset class="form-group">
+    <label>Pin Code</label>
+    <input type="number" class="form-control" #pincode="ngModel" [(ngModel)]="order.pincode" name="pincode" required="required" maxlength="25"/>
+    <span class="text-danger font-weight-bold" *ngIf="profileForm.dirty && pincode.invalid">Please Enter Valid Pin-Code</span> 
+   </fieldset>
+
+   <fieldset class="form-group">
+    <label>Flat</label>
+    <input type="text"  class="form-control" #flat="ngModel" [(ngModel)]="order.flat" name="flat" required="required" maxlength="25"/>
+    <span class="text-danger font-weight-bold" *ngIf="profileForm.dirty && flat.invalid">Please Enter Valid  Flat</span> 
+   </fieldset>
+
+
+   <fieldset class="form-group">
+    <label>Landmark</label>
+    <input type="text" class="form-control" #phoneNumber="ngModel" [(ngModel)]="order.landmark" name="lamdmark" required="required" maxlength="25"/>
+    <span class="text-danger font-weight-bold" *ngIf="profileForm.dirty && phoneNumber.invalid">Please Enter Valid Phone Number</span> 
+   </fieldset>
+
+   <fieldset class="form-group">
+    <label>State</label>
+    <input  type="text" class="form-control" #state="ngModel" [(ngModel)]="order.state" name="state" required="required" maxlength="25"/>
+    <span class="text-danger font-weight-bold" *ngIf="profileForm.dirty && state.invalid">Please Enter Valid State</span> 
+   </fieldset>
+   
+
+    
+
+<button type="submit"  class="btn btn-info">Save Changes</button>
+</form>
+</div>
+</div>
+</div> 

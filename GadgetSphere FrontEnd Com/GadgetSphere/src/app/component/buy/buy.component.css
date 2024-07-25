@@ -1,0 +1,36 @@
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.carousel .carousel-item {
+  display: none;
+  width: 100%;
+}
+
+.carousel .carousel-item.active {
+  display: block;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity and color as needed */
+  color: white; /* Text color */
+  border-radius: 50%; /* Make controls round */
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  line-height: 40px; /* Center vertically */
+  margin-top: 170px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+  text-decoration: none; /* Remove underline on hover */
+}

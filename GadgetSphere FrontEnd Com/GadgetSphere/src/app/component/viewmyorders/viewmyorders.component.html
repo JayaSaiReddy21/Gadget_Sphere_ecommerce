@@ -1,0 +1,28 @@
+<app-indexnavbar></app-indexnavbar>
+
+<body>
+  <div *ngIf="orderData.length > 0">
+    <h2>Your Sold Products</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Product Price</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of orderData">
+          <td>{{ product.productName }}</td>
+          <td>{{ product.productPrice }}</td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="orderData.length === 0">
+    <p>No sold products found.</p>
+  </div>
+</body>
+
+<app-indexfooter></app-indexfooter>

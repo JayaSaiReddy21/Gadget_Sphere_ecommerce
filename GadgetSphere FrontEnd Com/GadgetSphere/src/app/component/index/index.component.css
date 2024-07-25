@@ -1,0 +1,17 @@
+
+  /* Custom CSS for Carousel */
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+  .carousel-caption h5,
+  .carousel-caption p {
+    color: #fff;
+  }
+
+  .carousel-item img {
+    height: 550px; 
+    width: 100%; 
+    object-fit: cover; 
+    padding-top: 0.5%;
+  }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="adminlogin.component.css">
+</head>
+<body>
+  <app-indexnavbar></app-indexnavbar>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-header bg-primary text-white">Admin Login</div>
+          <div class="card-body">
+            <form #loginForm="ngForm" (ngSubmit)="handleLogin()">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Enter your username"
+                       [(ngModel)]="username" required #usernameField="ngModel">
+                <div *ngIf="usernameField.invalid && (usernameField.dirty || usernameField.touched)"
+                     class="text-danger">
+                  <div *ngIf="usernameField.errors?.['required']">Username is required.</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Enter your password"
+                       [(ngModel)]="password" required #passwordField="ngModel">
+                <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)"
+                     class="text-danger">
+                  <div *ngIf="passwordField.errors?.['required']">Password is required.</div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-indexfooter></app-indexfooter>
+</body>
+</html>

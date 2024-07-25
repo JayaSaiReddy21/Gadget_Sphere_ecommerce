@@ -1,0 +1,10 @@
+body {
+    padding-top: 50px;
+  }
+  .brand-logo {
+    max-width: 100%;
+    height: auto;
+  }
+  .brand-container {
+    margin-bottom: 30px;
+  }

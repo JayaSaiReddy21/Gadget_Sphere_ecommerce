@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Card Payment</h1>
+<div mat-dialog-content>
+  <form [formGroup]="cardPaymentForm">
+    <mat-form-field>
+      <input matInput placeholder="Cardholder Name" formControlName="cardholderName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Card Number" formControlName="cardNumber">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Expiry Date (MM/YYYY)" formControlName="expiryDate">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="CVV" formControlName="cvv">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button (click)="onSubmit()">Submit</button>
+</div>
